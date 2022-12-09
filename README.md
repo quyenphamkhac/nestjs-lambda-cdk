@@ -1,4 +1,4 @@
-# Welcome to your CDK TypeScript project
+# Welcome to your Nest Lambda CDK project
 
 This is a blank project for CDK development with TypeScript.
 

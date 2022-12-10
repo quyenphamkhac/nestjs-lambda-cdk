@@ -21,11 +21,18 @@
     "test:e2e": "jest --config ./test/jest-e2e.json"
   },
   "dependencies": {
+    "@aws-lambda-powertools/logger": "^1.5.0",
+    "@aws-lambda-powertools/metrics": "^1.5.0",
+    "@aws-lambda-powertools/tracer": "^1.5.0",
+    "@aws-sdk/client-dynamodb": "^3.226.0",
+    "@aws-sdk/lib-dynamodb": "^3.226.0",
+    "@middy/core": "^4.0.4",
     "@nestjs/common": "^9.0.0",
     "@nestjs/core": "^9.0.0",
     "@nestjs/platform-express": "^9.0.0",
     "@vendia/serverless-express": "^4.10.1",
     "aws-lambda": "^1.0.7",
+    "aws-xray-sdk-core": "^3.4.0",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",
     "rxjs": "^7.2.0"

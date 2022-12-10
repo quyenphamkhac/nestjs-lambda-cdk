@@ -64,8 +64,8 @@ export class NestjsLambdaCdkStack extends cdk.Stack {
       proxy: true,
     });
 
-    new cdk.CfnOutput(this, "ApiURL", {
-      value: `${api.url}products`,
+    new cdk.CfnOutput(this, "MyApiURL", {
+      value: `${api.url}`,
     });
   }
 }

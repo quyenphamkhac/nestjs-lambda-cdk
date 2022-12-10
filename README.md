@@ -2,7 +2,7 @@
 
 ## Webpack config
 We use webpack as the build tool to bundle NestJS app to a single Javascript file
-```
+```js
 // webpack.config.js
 module.exports = (options, webpack) => {
   const lazyImports = [
@@ -50,7 +50,7 @@ module.exports = (options, webpack) => {
 
 ## Config AWS Lambda Powertools
 [powertools](/app/src/powertools/utils.ts)
-```
+```typescript
 import { Logger } from '@aws-lambda-powertools/logger';
 import { Metrics } from '@aws-lambda-powertools/metrics';
 import { Tracer } from '@aws-lambda-powertools/tracer';
@@ -77,7 +77,7 @@ export { logger, metrics, tracer };
 ## NestJS main.ts
 Transform NestJS app to Lambda Handler + AWS Lambda Powertools config
 [main.ts](/app/src/main.ts)
-```
+```typescript
 import { injectLambdaContext } from '@aws-lambda-powertools/logger';
 import { logMetrics } from '@aws-lambda-powertools/metrics';
 import { captureLambdaHandler } from '@aws-lambda-powertools/tracer';
@@ -116,11 +116,10 @@ const handler = middy(lambdaHandler)
   .use(injectLambdaContext(logger, { clearState: true }));
 
 export { handler };
-
 ```
 
 ## Deploy stack
-```
+```bash
 cd app
 yarn build
 cd ..
@@ -128,7 +127,7 @@ cdk deploy --profile my-profile
 ```
 
 ## Run offline
-```
+```bash
 cd app
 serverless offline
 ```
